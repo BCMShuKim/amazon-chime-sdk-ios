@@ -10,9 +10,9 @@ import AmazonChimeSDKMedia
 import Foundation
 
 class DefaultVideoClient: VideoClient {
-    private let logger: Logger
+    private let logger: AWSChimeLogger
 
-    init(logger: Logger) {
+    init(logger: AWSChimeLogger) {
         self.logger = logger
 
         super.init()

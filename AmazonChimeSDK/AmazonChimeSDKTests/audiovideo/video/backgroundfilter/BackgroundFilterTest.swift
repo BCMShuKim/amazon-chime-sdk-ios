@@ -35,7 +35,7 @@ class BackgroundFilterTests: XCTestCase {
     let videoFrameGenerator = VideoFrameGenerator()
 
     override func setUp() {
-        loggerMock = mock(Logger.self)
+        loggerMock = mock(AWSChimeLogger.self)
         /// Load test image that will be used by the tests.
         guard let testImage = UIImage(named: "background-ml-test-image.jpeg",
                                       in: Bundle(for: type(of: self)),

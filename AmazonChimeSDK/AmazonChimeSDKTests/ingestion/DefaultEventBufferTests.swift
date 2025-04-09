@@ -40,7 +40,7 @@ class DefaultEventBufferTests: XCTestCase {
         eventDao = mock(EventDao.self)
         dirtyEventDao = mock(DirtyEventDao.self)
         eventSender = mock(EventSender.self)
-        logger = mock(Logger.self)
+        logger = mock(AWSChimeLogger.self)
         given(converter.toIngestionRecord(meetingEvents: any(), ingestionConfiguration: any())).willReturn(ingestionRecord)
         given(converter.toIngestionRecord(dirtyMeetingEvents: any(), ingestionConfiguration: any())).willReturn(ingestionRecord)
         given(dirtyEventDao.queryDirtyMeetingEventItems(size: any())).willReturn([DirtyMeetingEventItem(id: "aa", data: ingestionEvent, ttl: 11123)])

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 @objcMembers public class DefaultVideoTileController: NSObject, VideoTileController {
-    private let logger: Logger
+    private let logger: AWSChimeLogger
     private var videoTileMap = [Int: VideoTile]()
     private var videoViewToTileMap = [NSValue: VideoTile]()
     private let videoTileObservers = ConcurrentMutableSet()
@@ -18,7 +18,7 @@ import UIKit
     private let meetingStatsCollector: MeetingStatsCollector
 
     public init(videoClientController: VideoClientController,
-                logger: Logger,
+                logger: AWSChimeLogger,
                 meetingStatsCollector: MeetingStatsCollector) {
         self.videoClientController = videoClientController
         self.logger = logger

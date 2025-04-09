@@ -23,7 +23,7 @@ class DefaultContentShareVideoClientControllerTests: CommonTestCase {
 
         videoClientMock = mock(VideoClientProtocol.self)
         videoSourceMock = mock(VideoSource.self)
-        loggerMock = mock(Logger.self)
+        loggerMock = mock(AWSChimeLogger.self)
         clientMetricsLollectorMock = mock(ClientMetricsCollector.self)
         defaultContentShareVideoClientController =
             DefaultContentShareVideoClientController(videoClient: videoClientMock,

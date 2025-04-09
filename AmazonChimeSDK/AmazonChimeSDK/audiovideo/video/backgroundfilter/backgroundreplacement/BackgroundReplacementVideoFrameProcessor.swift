@@ -28,7 +28,7 @@ import UIKit
     private let backgroundFilterProcessor: BackgroundFilterProcessor
 
     /// Logger to log any warnings or errors.
-    private let logger: Logger
+    private let logger: AWSChimeLogger
 
     /// Public constructor to initialize the processor with a `BackgroundReplacementConfiguration`.
     ///

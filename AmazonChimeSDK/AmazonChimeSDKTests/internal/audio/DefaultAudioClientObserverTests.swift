@@ -50,7 +50,7 @@ class DefaultAudioClientObserverTests: XCTestCase {
         audioLockMock = mock(AudioLock.self)
         meetingStatsCollectorMock = mock(MeetingStatsCollector.self)
         transcriptEventObserverMock = mock(TranscriptEventObserver.self)
-        loggerMock = mock(Logger.self)
+        loggerMock = mock(AWSChimeLogger.self)
 
         given(meetingStatsCollectorMock.getMeetingStats()).will { [AnyHashable: Any]() }
 

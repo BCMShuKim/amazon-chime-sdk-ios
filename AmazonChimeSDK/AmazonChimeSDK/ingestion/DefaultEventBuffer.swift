@@ -14,7 +14,7 @@ import Foundation
     private let converter: IngestionEventConverter
     private let dirtyEventDao: DirtyEventDao
     private let eventSender: EventSender
-    private let logger: Logger
+    private let logger: AWSChimeLogger
     private let eventReporterQueue = DispatchQueue(label: "eventSQLiteQueue",
                                                    qos: .background,
                                                    attributes: .concurrent)
@@ -25,7 +25,7 @@ import Foundation
          dirtyEventDao: DirtyEventDao,
          converter: IngestionEventConverter,
          eventSender: EventSender,
-         logger: Logger)
+         logger: AWSChimeLogger)
     {
         self.ingestionConfiguration = ingestionConfiguration
         self.dirtyEventDao = dirtyEventDao

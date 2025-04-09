@@ -13,7 +13,7 @@ import UIKit
 
 class DefaultVideoClientController: NSObject {
     var clientMetricsCollector: ClientMetricsCollector
-    var logger: Logger
+    var logger: AWSChimeLogger
     var videoClient: VideoClientProtocol?
     var videoSourceAdapter = VideoSourceAdapter()
     var videoClientState: VideoClientState = .uninitialized
@@ -36,7 +36,7 @@ class DefaultVideoClientController: NSObject {
     init(videoClient: VideoClientProtocol,
          clientMetricsCollector: ClientMetricsCollector,
          configuration: MeetingSessionConfiguration,
-         logger: Logger,
+         logger: AWSChimeLogger,
          eventAnalyticsController: EventAnalyticsController) {
         self.defaultVideoClient = videoClient
         self.clientMetricsCollector = clientMetricsCollector

@@ -10,10 +10,10 @@ import AmazonChimeSDKMedia
 import Foundation
 
 class DefaultAudioClient: AudioClient {
-    private static var logger: Logger?
+    private static var logger: AWSChimeLogger?
     private static var sharedInstance: DefaultAudioClient?
 
-    static func shared(logger: Logger) -> DefaultAudioClient {
+    static func shared(logger: AWSChimeLogger) -> DefaultAudioClient {
         DefaultAudioClient.logger = logger
         if sharedInstance == nil {
             sharedInstance = DefaultAudioClient()

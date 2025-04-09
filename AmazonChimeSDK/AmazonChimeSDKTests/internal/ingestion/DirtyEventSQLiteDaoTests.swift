@@ -27,7 +27,7 @@ class DirtyEventSQLiteDaoTests: XCTestCase {
 
     override func setUp() {
         sqliteManagerMock = mock(DatabaseManager.self)
-        let loggerMock = mock(Logger.self)
+        let loggerMock = mock(AWSChimeLogger.self)
 
         given(sqliteManagerMock.query(tableName: any(), size: any())).willReturn([mockMap])
         given(sqliteManagerMock.insert(tableName: any(), contentValue: any())).willReturn(true)

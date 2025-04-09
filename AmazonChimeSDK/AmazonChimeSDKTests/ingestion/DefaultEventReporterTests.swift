@@ -25,7 +25,7 @@ class DefaultEventReporterTests: XCTestCase {
 
     override func setUp() {
         eventBuffer = mock(EventBuffer.self)
-        logger = mock(Logger.self)
+        logger = mock(AWSChimeLogger.self)
         timer = mock(Scheduler.self)
         given(eventBuffer.process()).willReturn()
     }

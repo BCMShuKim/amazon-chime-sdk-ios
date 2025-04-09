@@ -17,7 +17,7 @@ class HttpUtils {
     private static let domain = "AmazonChimeSDK"
     public class func post(url: String,
                            jsonData: Data? = nil,
-                           logger: Logger? = nil,
+                           logger: AWSChimeLogger? = nil,
                            httpRetryPolicy: BackoffRetry = DefaultBackoffRetry(),
                            headers: [String: String] = [:],
                            // https://developer.apple.com/documentation/foundation/urlsession/1409000-shared
@@ -46,7 +46,7 @@ class HttpUtils {
     private class func makePostRequest(url: String,
                                        method: HttpMethod,
                                        jsonData: Data?,
-                                       logger: Logger?,
+                                       logger: AWSChimeLogger?,
                                        headers: [String: String],
                                        urlSession: URLSessionProtocol,
                                        completion: @escaping CompletionFunc)
@@ -96,7 +96,7 @@ class HttpUtils {
         }.resume()
     }
 
-    private static func printError(logger: Logger?, msg: String) {
+    private static func printError(logger: AWSChimeLogger?, msg: String) {
         logger?.error(msg: "\(HttpUtils.tag): \(msg)")
     }
 }

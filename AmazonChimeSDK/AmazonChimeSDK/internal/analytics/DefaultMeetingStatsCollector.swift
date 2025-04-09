@@ -9,7 +9,7 @@
 import Foundation
 
 @objcMembers public class DefaultMeetingStatsCollector: NSObject, MeetingStatsCollector {
-    private let logger: Logger
+    private let logger: AWSChimeLogger
     private var meetingStartTimeMs: Int64 = 0
     private var meetingStartConnectingTimeMs: Int64 = 0
     private var retryCount: Int = 0
@@ -17,7 +17,7 @@ import Foundation
     private var maxVideoTileCount: Int = 0
     private var meetingHistory: [MeetingHistoryEvent] = []
 
-    init(logger: Logger) {
+    init(logger: AWSChimeLogger) {
         self.logger = logger
         super.init()
     }

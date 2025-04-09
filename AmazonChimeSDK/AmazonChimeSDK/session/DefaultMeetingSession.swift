@@ -13,13 +13,13 @@ import Foundation
 @objcMembers public class DefaultMeetingSession: NSObject, MeetingSession {
     public let audioVideo: AudioVideoFacade
     public let configuration: MeetingSessionConfiguration
-    public let logger: Logger
+    public let logger: AWSChimeLogger
     public let eventAnalyticsController: EventAnalyticsController
 
     private let audioSession = AVAudioSession.sharedInstance()
 
     public init(configuration: MeetingSessionConfiguration,
-                logger: Logger,
+                logger: AWSChimeLogger,
                 eventReporterFactory: EventReporterFactory) {
         self.configuration = configuration
         self.logger = logger
@@ -106,7 +106,7 @@ import Foundation
     }
 
     public convenience init(configuration: MeetingSessionConfiguration,
-                            logger: Logger) {
+                            logger: AWSChimeLogger) {
         let ingestionConfiguration = IngestionConfigurationBuilder().build(disabled: configuration.urls.ingestionUrl?.isEmpty != false,
                                                                            ingestionUrl: configuration.urls.ingestionUrl ?? "",
                                                                            clientConiguration: MeetingEventClientConfiguration(eventClientJoinToken: configuration.credentials.joinToken,

@@ -10,7 +10,7 @@ import Foundation
 
 @objcMembers class DefaultEventSender: EventSender {
     private let ingestionConfiguration: IngestionConfiguration
-    private let logger: Logger
+    private let logger: AWSChimeLogger
     // 408: Request Timeout
     // 429: Too many request
     // 500: Internal Server Error
@@ -18,7 +18,7 @@ import Foundation
     // 503: Service Unavailable
     // 504: Gateway timeout
     private let retryableStatusSet: Set = [408, 429, 500, 502, 503, 504]
-    init(ingestionConfiguration: IngestionConfiguration, logger: Logger) {
+    init(ingestionConfiguration: IngestionConfiguration, logger: AWSChimeLogger) {
         self.ingestionConfiguration = ingestionConfiguration
         self.logger = logger
     }

@@ -10,7 +10,7 @@ import Foundation
 
 @objc public protocol MeetingSession {
     var configuration: MeetingSessionConfiguration { get }
-    var logger: Logger { get }
+    var logger: AWSChimeLogger { get }
     var audioVideo: AudioVideoFacade { get }
     var eventAnalyticsController: EventAnalyticsController { get }
 }
