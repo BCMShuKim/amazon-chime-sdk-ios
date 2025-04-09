@@ -11,7 +11,7 @@ import Foundation
 
 @objcMembers public class DefaultContentShareVideoClientController: NSObject, ContentShareVideoClientController {
     private let configuration: MeetingSessionConfiguration
-    private let logger: Logger
+    private let logger: AWSChimeLogger
     private let clientMetricsCollector: ClientMetricsCollector
     private let videoClient: VideoClientProtocol
     private let contentShareObservers = ConcurrentMutableSet()
@@ -31,7 +31,7 @@ import Foundation
 
     public init(videoClient: VideoClientProtocol,
                 configuration: MeetingSessionConfiguration,
-                logger: Logger,
+                logger: AWSChimeLogger,
                 clientMetricsCollector: ClientMetricsCollector) {
         self.configuration = configuration
         videoConfig.audioHostUrl = configuration.urls.audioHostUrl as NSString

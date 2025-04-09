@@ -11,7 +11,7 @@ import Foundation
 
 @objcMembers public class DefaultAudioVideoController: NSObject, AudioVideoControllerFacade {
     public let configuration: MeetingSessionConfiguration
-    public let logger: Logger
+    public let logger: AWSChimeLogger
 
     private let audioClientController: AudioClientController
     private let audioClientObserver: AudioClientObserver
@@ -26,7 +26,7 @@ import Foundation
                 videoClientController: VideoClientController,
                 videoTileController: VideoTileController,
                 configuration: MeetingSessionConfiguration,
-                logger: Logger) {
+                logger: AWSChimeLogger) {
         self.audioClientController = audioClientController
         self.audioClientObserver = audioClientObserver
         self.clientMetricsCollector = clientMetricsCollector

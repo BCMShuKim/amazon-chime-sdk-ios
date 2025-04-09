@@ -89,6 +89,6 @@ class CommonTestCase: XCTestCase {
                         createAttendeeResponse: createAttendeeResponseMock,
                         urlRewriter: URLRewriterUtils.defaultUrlRewriter)
 
-        loggerMock = mock(Logger.self)
+        loggerMock = mock(AWSChimeLogger.self)
     }
 }

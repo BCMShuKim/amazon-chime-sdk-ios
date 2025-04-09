@@ -22,7 +22,7 @@ class DefaultCameraCaptureSourceTests: XCTestCase {
         AVCaptureDevice.swizzle()
         AVCaptureSession.swizzle()
         eventControllerMock = mock(EventAnalyticsController.self)
-        let loggerMock = mock(Logger.self)
+        let loggerMock = mock(AWSChimeLogger.self)
         mockSourceObserver = mock(CaptureSourceObserver.self)
 
         defaultCameraCaptureSource = DefaultCameraCaptureSource(logger: loggerMock)

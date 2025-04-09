@@ -22,7 +22,7 @@ import UIKit
     static func postTURNRequest(meetingId: String,
                                 turnControlUrl: String,
                                 joinToken: String,
-                                logger: Logger,
+                                logger: AWSChimeLogger,
                                 completion: @escaping (MeetingSessionTURNCredentials?) -> Void) {
         guard let turnRequest = constructTURNRequest(meetingId: meetingId,
                                                      turnControlUrl: turnControlUrl,

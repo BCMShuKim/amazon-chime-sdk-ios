@@ -12,12 +12,12 @@ import Foundation
     private var eventAnalyticObservers = ConcurrentMutableSet()
     private let meetingStatsCollector: MeetingStatsCollector
     private let meetingSessionConfig: MeetingSessionConfiguration
-    private let logger: Logger
+    private let logger: AWSChimeLogger
     private let eventReporter: EventReporter?
 
     init(meetingSessionConfig: MeetingSessionConfiguration,
          meetingStatsCollector: MeetingStatsCollector,
-         logger: Logger,
+         logger: AWSChimeLogger,
          eventReporter: EventReporter?)
     {
         self.meetingSessionConfig = meetingSessionConfig
@@ -29,7 +29,7 @@ import Foundation
 
     convenience init(meetingSessionConfig: MeetingSessionConfiguration,
                      meetingStatsCollector: MeetingStatsCollector,
-                     logger: Logger)
+                     logger: AWSChimeLogger)
     {
         self.init(meetingSessionConfig: meetingSessionConfig,
                   meetingStatsCollector: meetingStatsCollector,

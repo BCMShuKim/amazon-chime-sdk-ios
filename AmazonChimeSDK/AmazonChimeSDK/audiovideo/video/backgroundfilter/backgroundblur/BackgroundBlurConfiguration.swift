@@ -10,10 +10,10 @@ import Foundation
 
 @objcMembers public class BackgroundBlurConfiguration: NSObject {
     let blurStrength: BackgroundBlurStrength
-    let logger: Logger
+    let logger: AWSChimeLogger
     let backgroundFilterProcessor: BackgroundFilterProcessor
 
-    public init(logger: Logger, blurStrength: BackgroundBlurStrength = BackgroundBlurStrength.low) {
+    public init(logger: AWSChimeLogger, blurStrength: BackgroundBlurStrength = BackgroundBlurStrength.low) {
         self.blurStrength = blurStrength
         self.logger = logger
         self.backgroundFilterProcessor = BackgroundFilterProcessor(logger: logger)

@@ -12,7 +12,7 @@ import VideoToolbox
 @objcMembers public class DefaultVideoTile: NSObject, VideoTile {
     public var state: VideoTileState
 
-    private let logger: Logger
+    private let logger: AWSChimeLogger
 
     public var videoRenderView: VideoRenderView?
 
@@ -21,7 +21,7 @@ import VideoToolbox
                 videoStreamContentWidth: Int,
                 videoStreamContentHeight: Int,
                 isLocalTile: Bool,
-                logger: Logger) {
+                logger: AWSChimeLogger) {
         state = VideoTileState(tileId: tileId,
                                attendeeId: attendeeId,
                                videoStreamContentWidth: videoStreamContentWidth,

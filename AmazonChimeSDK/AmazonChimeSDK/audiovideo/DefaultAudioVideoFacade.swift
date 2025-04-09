@@ -10,7 +10,7 @@ import Foundation
 
 @objcMembers public class DefaultAudioVideoFacade: NSObject, AudioVideoFacade {
     public let configuration: MeetingSessionConfiguration
-    public let logger: Logger
+    public let logger: AWSChimeLogger
 
     let audioVideoController: AudioVideoControllerFacade
     let realtimeController: RealtimeControllerFacade

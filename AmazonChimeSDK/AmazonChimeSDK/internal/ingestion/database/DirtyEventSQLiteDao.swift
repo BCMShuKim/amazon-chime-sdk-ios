@@ -10,10 +10,10 @@ import Foundation
 
 class DirtyEventSQLiteDao: DirtyEventDao {
     private let sqliteManager: DatabaseManager
-    private let logger: Logger
+    private let logger: AWSChimeLogger
     private let tableName = "DirtyEvents"
 
-    init(sqliteManager: DatabaseManager, logger: Logger) {
+    init(sqliteManager: DatabaseManager, logger: AWSChimeLogger) {
         self.sqliteManager = sqliteManager
         self.logger = logger
 

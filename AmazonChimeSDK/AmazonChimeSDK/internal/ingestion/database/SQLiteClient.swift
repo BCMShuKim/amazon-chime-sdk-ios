@@ -21,14 +21,14 @@ class SQLiteClient: DatabaseClient {
 
     /// A pointer to the database instance
     private var database: OpaquePointer?
-    private var logger: Logger?
+    private var logger: AWSChimeLogger?
 
     /// SQLite has two ways to handle database. One in memory and one with file.
     /// See https://sqlite.org/inmemorydb.html for more details.
     /// This tells whether SQLite runs in memory (not persistent) or in file
     private var inMemory = false
 
-    init(databaseName: String, logger: Logger?, inMemory: Bool = false) {
+    init(databaseName: String, logger: AWSChimeLogger?, inMemory: Bool = false) {
         self.logger = logger
         self.inMemory = inMemory
 

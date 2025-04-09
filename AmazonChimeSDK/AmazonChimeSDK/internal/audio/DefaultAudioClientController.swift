@@ -23,7 +23,7 @@ class DefaultAudioClientController: NSObject {
     private let eventAnalyticsController: EventAnalyticsController
     private let meetingStatsCollector: MeetingStatsCollector
     private let activeSpeakerDetector: ActiveSpeakerDetectorFacade
-    private let logger: Logger
+    private let logger: AWSChimeLogger
 
     init(audioClient: AudioClientProtocol,
          audioClientObserver: AudioClientObserver,
@@ -32,7 +32,7 @@ class DefaultAudioClientController: NSObject {
          eventAnalyticsController: EventAnalyticsController,
          meetingStatsCollector: MeetingStatsCollector,
          activeSpeakerDetector: ActiveSpeakerDetectorFacade,
-         logger: Logger) {
+         logger: AWSChimeLogger) {
         self.audioClient = audioClient
         self.audioClientObserver = audioClientObserver
         self.audioSession = audioSession

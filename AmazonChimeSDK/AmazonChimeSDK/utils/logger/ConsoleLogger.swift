@@ -25,7 +25,7 @@ import os
 /// logger.setLogLevel(LogLevel.DEBUG)
 /// logger.debug("debug"); // print
 /// ```
-@objcMembers public class ConsoleLogger: NSObject, Logger {
+@objcMembers public class ConsoleLogger: NSObject, AWSChimeLogger {
     let name: String
     var level: LogLevel
 

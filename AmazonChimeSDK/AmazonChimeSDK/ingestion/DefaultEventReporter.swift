@@ -11,13 +11,13 @@ import Foundation
 @objcMembers public class DefaultEventReporter: NSObject, EventReporter {
     private let eventBuffer: EventBuffer
     private let ingestionConfiguration: IngestionConfiguration
-    private let logger: Logger
+    private let logger: AWSChimeLogger
     private var timer: Scheduler?
     private var isStarted = false
 
     init(ingestionConfiguration: IngestionConfiguration,
          eventBuffer: EventBuffer,
-         logger: Logger,
+         logger: AWSChimeLogger,
          timer: Scheduler? = nil) {
         self.eventBuffer = eventBuffer
         self.ingestionConfiguration = ingestionConfiguration

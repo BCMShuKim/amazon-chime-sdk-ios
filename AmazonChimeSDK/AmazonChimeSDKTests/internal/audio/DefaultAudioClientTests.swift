@@ -16,7 +16,7 @@ class DefaultAudioClientTests: XCTestCase {
     var defaultAudioClient: DefaultAudioClient!
 
     override func setUp() {
-        loggerMock = mock(Logger.self)
+        loggerMock = mock(AWSChimeLogger.self)
         defaultAudioClient = DefaultAudioClient.shared(logger: loggerMock)
     }
 

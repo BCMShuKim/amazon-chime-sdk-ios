@@ -10,9 +10,9 @@ import Foundation
 
 @objcMembers public class DefaultMeetingEventReporterFactory: EventReporterFactory {
     private let ingestionConfiguration: IngestionConfiguration
-    private let logger: Logger
+    private let logger: AWSChimeLogger
 
-    public init(ingestionConfiguration: IngestionConfiguration, logger: Logger) {
+    public init(ingestionConfiguration: IngestionConfiguration, logger: AWSChimeLogger) {
         self.ingestionConfiguration = ingestionConfiguration
         self.logger = logger
     }

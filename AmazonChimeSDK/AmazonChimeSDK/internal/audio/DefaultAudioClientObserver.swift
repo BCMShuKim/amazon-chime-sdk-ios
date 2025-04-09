@@ -23,7 +23,7 @@ class DefaultAudioClientObserver: NSObject, AudioClientDelegate {
     private var currentAudioStatus = MeetingSessionStatusCode.ok
     private let realtimeObservers = ConcurrentMutableSet()
     private let transcriptEventObservers = ConcurrentMutableSet()
-    private let logger: Logger
+    private let logger: AWSChimeLogger
     private let eventAnalyticsController: EventAnalyticsController
     private let meetingStatsCollector: MeetingStatsCollector
     private var primaryMeetingPromotionObserver: PrimaryMeetingPromotionObserver?
@@ -34,7 +34,7 @@ class DefaultAudioClientObserver: NSObject, AudioClientDelegate {
          clientMetricsCollector: ClientMetricsCollector,
          audioClientLock: AudioLock,
          configuration: MeetingSessionConfiguration,
-         logger: Logger,
+         logger: AWSChimeLogger,
          eventAnalyticsController: EventAnalyticsController,
          meetingStatsCollector: MeetingStatsCollector) {
         self.audioClient = audioClient

@@ -18,7 +18,7 @@ import ReplayKit
     // This will prioritize resolution over framerate.
     public var videoContentHint: VideoContentHint = .text
 
-    private let logger: Logger
+    private let logger: AWSChimeLogger
     private let observers = ConcurrentMutableSet()
     private let sinks = ConcurrentMutableSet()
 
@@ -28,7 +28,7 @@ import ReplayKit
     // Use an internal source so that logic can be shared with ReplayKit broadcast sources.
     private let replayKitSource: ReplayKitSource
 
-    public init(logger: Logger) {
+    public init(logger: AWSChimeLogger) {
         self.logger = logger
         replayKitSource = ReplayKitSource(logger: logger)
     }

@@ -10,7 +10,7 @@ import AVFoundation
 
 @objcMembers public class DefaultDeviceController: NSObject, DeviceController {
     let videoClientController: VideoClientController
-    let logger: Logger
+    let logger: AWSChimeLogger
     let audioSession: AudioSession
     let deviceChangeObservers = ConcurrentMutableSet()
     let eventAnalyticsController: EventAnalyticsController
@@ -18,7 +18,7 @@ import AVFoundation
     public init(audioSession: AudioSession,
                 videoClientController: VideoClientController,
                 eventAnalyticsController: EventAnalyticsController,
-                logger: Logger) {
+                logger: AWSChimeLogger) {
         self.videoClientController = videoClientController
         self.logger = logger
         self.audioSession = audioSession

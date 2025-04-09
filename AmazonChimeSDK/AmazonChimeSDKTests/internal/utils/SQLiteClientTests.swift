@@ -23,7 +23,7 @@ class SQLiteClientTests: XCTestCase {
     private let numName = "num"
 
     override func setUp() {
-        let loggerMock = mock(Logger.self)
+        let loggerMock = mock(AWSChimeLogger.self)
 
         // :memory: is needed for in memory databse
         sqliteDBClient = SQLiteClient(databaseName: ":memory:", logger: loggerMock, inMemory: true)

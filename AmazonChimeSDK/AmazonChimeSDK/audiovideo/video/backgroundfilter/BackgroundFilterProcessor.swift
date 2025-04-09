@@ -32,7 +32,7 @@ public class BackgroundFilterProcessor {
     private let segmentationProcessor: SegmentationProcessor
 
     /// Custom logger to log any errors or warnings.
-    let logger: Logger
+    let logger: AWSChimeLogger
 
     /// Segmentation processor height.
     private var segmentationProcessorHeight = 256
@@ -53,7 +53,7 @@ public class BackgroundFilterProcessor {
     ///
     /// - Parameters:
     ///   - logger: Custom logger to log events.
-    public init(logger: Logger) {
+    public init(logger: AWSChimeLogger) {
         self.logger = logger
         if !BackgroundFilterProcessor.isAvailable() {
             self.logger.error(msg: "Unable to load TensorFlowLiteSegmentationProcessor. " +

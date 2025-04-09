@@ -22,7 +22,7 @@ class DefaultVideoTileTests: XCTestCase {
     var defaultVideoTitle: DefaultVideoTile!
 
     override func setUp() {
-        loggerMock = mock(Logger.self)
+        loggerMock = mock(AWSChimeLogger.self)
         defaultVideoTitle = DefaultVideoTile(tileId: tileId,
                                              attendeeId: attendeeId,
                                              videoStreamContentWidth: videoStreamContentWidth,

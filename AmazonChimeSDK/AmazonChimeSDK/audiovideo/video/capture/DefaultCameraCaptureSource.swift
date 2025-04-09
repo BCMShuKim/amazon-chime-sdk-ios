@@ -12,7 +12,7 @@ import UIKit
 
 @objcMembers public class DefaultCameraCaptureSource: NSObject, CameraCaptureSource {
     public var videoContentHint: VideoContentHint = .motion
-    private let logger: Logger
+    private let logger: AWSChimeLogger
     private let cameraLock = NSLock()
     private let deviceType = AVCaptureDevice.DeviceType.builtInWideAngleCamera
     private let sinks = ConcurrentMutableSet()
@@ -28,7 +28,7 @@ import UIKit
     private var captureDevice: AVCaptureDevice?
     private var eventAnalyticsController: EventAnalyticsController?
 
-    public init(logger: Logger) {
+    public init(logger: AWSChimeLogger) {
         self.logger = logger
         super.init()
 

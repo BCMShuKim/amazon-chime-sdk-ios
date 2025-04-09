@@ -20,7 +20,7 @@ import ReplayKit
     // This will prioritize resolution over frame rate.
     public var videoContentHint: VideoContentHint = .detail
 
-    private let logger: Logger
+    private let logger: AWSChimeLogger
     private let sinks = ConcurrentMutableSet()
 
     private lazy var videoFrameResender = VideoFrameResender(minFrameRate: 5) { [weak self] (frame) -> Void in
@@ -28,7 +28,7 @@ import ReplayKit
         self.sendVideoFrame(frame: frame)
     }
 
-    public init(logger: Logger) {
+    public init(logger: AWSChimeLogger) {
         self.logger = logger
     }
 

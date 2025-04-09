@@ -35,7 +35,7 @@ class DefaultAudioVideoFacadeTests: CommonTestCase {
         meetingStatsCollectorMock = mock(MeetingStatsCollector.self)
 
         var valueProvider = ValueProvider()
-        valueProvider.register(loggerMock, for: Logger.self)
+        valueProvider.register(loggerMock, for: AWSChimeLogger.self)
         valueProvider.register(meetingSessionConfigurationMock, for: MeetingSessionConfiguration.self)
         audioVideoControllerMock.useDefaultValues(from: valueProvider)
 
