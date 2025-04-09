@@ -11,7 +11,7 @@ import Foundation
 /// `Logger` defines how to write logs for different logging level.
 ///  Logger -> AWSChimeLogger 변경
 @objc(AWSChimeLogger)
-public protocol Logger {
+public protocol AWSChimeLogger {
     /// Emits any message if the log level is equal to or lower than default level.
     func `default`(msg: String)
 
