@@ -22,7 +22,7 @@ import CoreMedia
     // Cached constant values
     private let resendScheduleLeewayMs = DispatchTimeInterval.milliseconds(20)
     
-    private let logger: Logger
+    private let logger: AWSChimeLogger
     
     private let lock = NSLock()
     
@@ -33,7 +33,7 @@ import CoreMedia
     /// than originally sent with so it won't be dropped by downstream encoders.
     /// `resendFrameHandler` needs to be thread safe.
     init(minFrameRate: UInt,
-         logger: Logger,
+         logger: AWSChimeLogger,
          resendFrameHandler: @escaping (VideoFrame) -> Void) {
         let timer = DispatchSource.makeTimerSource(flags: .strict, queue: resendQueue)
         self.resendTimer = timer
